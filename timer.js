@@ -1,5 +1,3 @@
-
-  
 var countDownDate = new Date("Jun 5, 2022 15:37:25").getTime();
  
 var x = setInterval(function() {
@@ -20,4 +18,4 @@ var x = setInterval(function() {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
-}, 1000); 
+}, 1000);

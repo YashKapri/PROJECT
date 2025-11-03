@@ -55,12 +55,23 @@
 }
 
 .btn{
-    padding:7px 12px;
-    border: 2px solid white;
-    border-radius: 6px;
+    padding:10px 20px; /* Increased padding */
+    border: none; /* Removed border for a cleaner look */
+    border-radius: 25px; /* More rounded button */
     cursor: pointer;
     color: white;
     background-color: rgb(227 74 56);;
+    transition: all 0.3s ease-in-out; /* Added transition */
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Button Hover Effect (Interactive) */
+.btn:hover{
+    background-color: rgb(255, 100, 80); /* Lighter shade on hover */
+    box-shadow: 0 5px 15px rgba(227, 74, 56, 0.4); /* Added shadow on hover */
+    transform: translateY(-1px);
 }
 
 .overflow-x-hidden{

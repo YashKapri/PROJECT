@@ -1,139 +1,376 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
+/* Added for smooth scrolling */
+html {
+    scroll-behavior: smooth; 
+}
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Added for better layout control */
 }
 
+/* Base Styles */
 .container{
     max-width: 80vw;
     font-family: 'Ubuntu', sans-serif;
 }
 
+/* Navbar */
+/* ... (existing navbar styles) ... */
 .navbar{
     display: flex;
     height: 67px;
+    transition: all 0.3s ease-in-out; 
 }
 .navbar li{
     list-style: none;
-    margin: 0 12px;
+    margin: 0 16px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    padding: 2px 0;
 }
+
+/* Navbar Anchor Links */
+.navbar li a {
+    text-decoration: none; 
+    color: inherit; 
+    padding: 2px 0;
+    display: block;
+}
+
+
+/* Navbar Hover Effect */
+.navbar li:hover{
+    color: rgb(227 74 56); 
+    font-weight: 500;
+}
+
+/* Logo Anchor Link */
+.logo a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+.logo a:hover {
+    color: #37110d; 
+}
+
 
 .topleft{
     width: 50%;
 }
 
-.topright{ 
+.topright{
     width: 50%;
 }
 
+/* Section 1 - Hero */
 .section1{
-   max-height: 100vh; 
-   color: #711e15;
+   min-height: 85vh; 
+   color: #37110d;
+   padding-top: 20px;
 }
 
 .section1 h1{
     color: #37110d;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 .logo{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 
 .dumbellimg{
-    width: 289px;
+    width: 200px; 
+    animation: bounce 2s infinite; 
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 .topright .gymimg{
-    width: 466px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
+/* New Section Styles */
+.section_about, .section_contact, .section_join {
+    padding: 73px 0; 
+}
+
+.section_about h1, .section_contact h1, .section_join h1 {
+    font-size: 2.3rem; 
+}
+
+.section_about p, .section_contact p, .section_join p {
+    padding: 0 8vw;
+    text-align: center;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.section_about .box:hover {
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3); 
+}
+
+/* Section 2 - Pricing */
 .section2{
-    padding: 73px;
+    padding: 73px 0; 
 }
 
 .section2 h1{
-    font-size: 2.3rem;
+    font-size: 2.8rem;
 }
 
 .section2 p{
     padding: 0 8vw;
     text-align: center;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.boxes{
+    gap: 25px; 
 }
 
 .box{
-    padding: 8px 0;
-    margin: 12px 22px;
-    min-width: 20vw;
-    border: 2px solid rgb(120, 54, 16);
-    border-radius: 8px;
+    padding: 25px 20px; 
+    margin: 12px 0; 
+    min-width: 25vw;
+    max-width: 300px;
+    border: none;
+    border-radius: 12px; 
     text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    transition: all 0.3s ease-in-out; 
+    cursor: pointer;
+}
+
+/* Box Hover Effect */
+.box:hover{
+    box-shadow: 0 10px 25px rgba(227, 74, 56, 0.3); 
+    transform: translateY(-5px) scale(1.02); 
 }
 
 .box h2{
-    font-size: 2rem;
+    font-size: 2.2rem;
     padding: 15px 0;
+    color: rgb(227 74 56);
 }
 
 .highlighted{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bolder;
+    color: #37110d;
 }
 
 .box ul{
     list-style-type: none;
+    padding-bottom: 15px;
 }
 
 .box ul li{
-   margin: 12px 2px;
+   margin: 10px 2px;
+   font-size: 1rem;
+   color: #555;
 }
 
 .plantable{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+}
+
+/* Section 3 - Table */
+.section3{
+    padding: 73px 0;
+}
+.section3 h1{
+    font-size: 2.8rem;
+    margin-bottom: 40px;
 }
 
 .section3 table{
-    width: 100%;
-    margin-bottom: 140px;
-    margin-top: 20px;
+    width: 80%; 
+    max-width: 900px;
+    margin: 20px auto 140px auto;
     border-collapse: collapse;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    border-radius: 8px;
+    overflow: hidden; 
 }
 
-.section3 table th{ 
-    width: 23vw; 
-    border-bottom: 2px solid black;
-    padding: 15px 0;
-} 
-
-.section3 table td{   
-    border-bottom: 2px solid black; 
-} 
- 
-
-.section3 h1{
-    font-size: 2.3rem;
+.section3 table th, .section3 table td{
+    padding: 15px;
+    border-bottom: 1px solid #eee; 
 }
 
-.section3{
-    padding: 73px;
+.section3 table th{
+    background-color: #f8f8f8;
+    width: auto;
 }
 
+.section3 table tbody tr:last-child td, .section3 table tbody tr:last-child th{
+    border-bottom: none;
+}
+
+/* Footer */
 footer{
-    padding: 23px;
+    padding: 30px; 
     text-align: center;
+    background-color: #333; 
+    color: white;
 }
 .buttons{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 12px;
+    margin: 25px 0; 
+    gap: 15px; 
 }
 
 .deal{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bolder;
-    margin: 12px 0;
+    margin: 20px 0;
+    color: rgb(227 74 56);
+}
+
+/* Utility for checkmark icons (Interactive) */
+.check-icon {
+    color: #388e3c; 
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+.cross-icon {
+    color: rgb(227 74 56); 
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+
+/* --- NEW PAYMENT MODAL STYLES --- */
+
+/* Modal Background */
+.payment-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Semi-transparent black */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+/* Modal Content Box */
+.payment-modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    animation: slideUp 0.3s;
+}
+
+/* Close Button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: rgb(227 74 56);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Payment Tabs */
+.payment-tabs {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    gap: 10px;
+}
+
+.tab-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.tab-btn.active-tab {
+    background-color: rgb(227 74 56);
+    color: white;
+    box-shadow: 0 2px 5px rgba(227, 74, 56, 0.4);
+}
+
+/* Payment Sections */
+.payment-section {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: none; /* Controlled by JS */
+}
+
+.payment-section.active-section {
+    display: block;
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    background-color: #333; /* Placeholder for QR Code */
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideUp {
+    from {transform: translateY(50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
 }

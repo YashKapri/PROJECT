@@ -374,3 +374,83 @@ footer{
     from {transform: translateY(50px); opacity: 0;}
     to {transform: translateY(0); opacity: 1;}
 }
+/* --- AI CHATBOT STYLES --- */
+
+.ai-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    max-height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Ubuntu', sans-serif; /* Uses your site's font */
+}
+
+.chat-header {
+    background-color: rgb(227 74 56); /* Uses your site's main color */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto; /* Makes messages scrollable */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #f9f9f9;
+    min-height: 250px; /* Ensures a minimum chat area */
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 85%;
+    line-height: 1.4;
+}
+
+.ai-message {
+    background-color: #e0e0e0;
+    color: #333;
+    align-self: flex-start;
+}
+
+.user-message {
+    background-color: rgb(227 74 56); /* Uses your site's main color */
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background-color: #fff;
+}
+
+.chat-input-area input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin-right: 10px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.chat-input-area button {
+    /* This re-uses your existing .btn style! */
+    flex-shrink: 0; /* Prevents button from shrinking */
+    padding: 10px 15px;
+    font-size: 0.9rem;
+}

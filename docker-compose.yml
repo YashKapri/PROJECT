@@ -1,0 +1,26 @@
+﻿services:
+  postgres:
+    image: postgres:16
+    container_name: yf_postgres
+    environment:
+      POSTGRES_USER: yf_user
+      POSTGRES_PASSWORD: yf_pass
+      POSTGRES_DB: yf_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7
+    container_name: yf_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redisdata:/data
+
+volumes:
+  pgdata:
+  redisdata:

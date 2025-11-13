@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+/* Added for smooth scrolling */
+html {
+    scroll-behavior: smooth; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added for better layout control */
+}
+
+/* Base Styles */
+.container{
+    max-width: 80vw;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Navbar */
+/* ... (existing navbar styles) ... */
+.navbar{
+    display: flex;
+    height: 67px;
+    transition: all 0.3s ease-in-out; 
+}
+.navbar li{
+    list-style: none;
+    margin: 0 16px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    padding: 2px 0;
+}
+
+/* Navbar Anchor Links */
+.navbar li a {
+    text-decoration: none; 
+    color: inherit; 
+    padding: 2px 0;
+    display: block;
+}
+
+
+/* Navbar Hover Effect */
+.navbar li:hover{
+    color: rgb(227 74 56); 
+    font-weight: 500;
+}
+
+/* Logo Anchor Link */
+.logo a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+.logo a:hover {
+    color: #37110d; 
+}
+
+
+.topleft{
+    width: 50%;
+}
+
+.topright{
+    width: 50%;
+}
+
+/* Section 1 - Hero */
+.section1{
+   min-height: 85vh; 
+   color: #37110d;
+   padding-top: 20px;
+}
+
+.section1 h1{
+    color: #37110d;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.logo{
+    font-size: 1.5rem;
+}
+
+.dumbellimg{
+    width: 200px; 
+    animation: bounce 2s infinite; 
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.topright .gymimg{
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* New Section Styles */
+.section_about, .section_contact, .section_join {
+    padding: 73px 0; 
+}
+
+.section_about h1, .section_contact h1, .section_join h1 {
+    font-size: 2.3rem; 
+}
+
+.section_about p, .section_contact p, .section_join p {
+    
+    text-align: center;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.section_about .box:hover {
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3); 
+}
+
+/* Section 2 - Pricing */
+.section2{
+    padding: 73px 0; 
+}
+
+.section2 h1{
+    font-size: 2.8rem;
+}
+
+.section2 p{
+    padding: 0 8vw;
+    text-align: center;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.boxes{
+    gap: 25px; 
+}
+
+.box{
+    padding: 25px 20px; 
+    margin: 12px 0; 
+    min-width: 25vw;
+    max-width: 300px;
+    border: none;
+    border-radius: 12px; 
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
+    transition: all 0.3s ease-in-out; 
+    cursor: pointer;
+}
+
+/* Box Hover Effect */
+.box:hover{
+    box-shadow: 0 10px 25px rgba(227, 74, 56, 0.3); 
+    transform: translateY(-5px) scale(1.02); 
+}
+
+.box h2{
+    font-size: 2.2rem;
+    padding: 15px 0;
+    color: rgb(227 74 56);
+}
+
+.highlighted{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: #37110d;
+}
+
+.box ul{
+    list-style-type: none;
+    padding-bottom: 15px;
+}
+
+.box ul li{
+   margin: 10px 2px;
+   font-size: 1rem;
+   color: #555;
+}
+
+.plantable{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Section 3 - Table */
+.section3{
+    padding: 73px 0;
+}
+.section3 h1{
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+}
+
+.section3 table{
+    width: 80%; 
+    max-width: 900px;
+    margin: 20px auto 140px auto;
+    border-collapse: collapse;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    border-radius: 8px;
+    overflow: hidden; 
+}
+
+.section3 table th, .section3 table td{
+    padding: 15px;
+    border-bottom: 1px solid #eee; 
+}
+
+.section3 table th{
+    background-color: #f8f8f8;
+    width: auto;
+}
+
+.section3 table tbody tr:last-child td, .section3 table tbody tr:last-child th{
+    border-bottom: none;
+}
+
+/* Footer */
+footer{
+    padding: 30px; 
+    text-align: center;
+    background-color: #333; 
+    color: white;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px 0; 
+    gap: 15px; 
+}
+
+.deal{
+    font-size: 1.4rem;
+    font-weight: bolder;
+    margin: 20px 0;
+    color: rgb(227 74 56);
+}
+
+/* Utility for checkmark icons (Interactive) */
+.check-icon {
+    color: #388e3c; 
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+.cross-icon {
+    color: rgb(227 74 56); 
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+
+/* --- NEW PAYMENT MODAL STYLES --- */
+
+/* Modal Background */
+.payment-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Semi-transparent black */
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+/* Modal Content Box */
+.payment-modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    animation: slideUp 0.3s;
+}
+
+/* Close Button */
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: rgb(227 74 56);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Payment Tabs */
+.payment-tabs {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    gap: 10px;
+}
+
+.tab-btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.tab-btn.active-tab {
+    background-color: rgb(227 74 56);
+    color: white;
+    box-shadow: 0 2px 5px rgba(227, 74, 56, 0.4);
+}
+
+/* Payment Sections */
+.payment-section {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: none; /* Controlled by JS */
+}
+
+.payment-section.active-section {
+    display: block;
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    background-color: #333; /* Placeholder for QR Code */
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideUp {
+    from {transform: translateY(50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+/* --- AI CHATBOT STYLES --- */
+
+.ai-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    max-height: 50px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Ubuntu', sans-serif; /* Uses your site's font */
+}
+
+.chat-header {
+    background-color: rgb(227 74 56); /* Uses your site's main color */
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto; /* Makes messages scrollable */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #f9f9f9;
+    min-height: 250px; /* Ensures a minimum chat area */
+}
+
+.message {
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 85%;
+    line-height: 1.4;
+}
+
+.ai-message {
+    background-color: #e0e0e0;
+    color: #333;
+    align-self: flex-start;
+}
+
+.user-message {
+    background-color: rgb(227 74 56); /* Uses your site's main color */
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background-color: #fff;
+}
+
+.chat-input-area input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    margin-right: 10px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.chat-input-area button {
+    /* This re-uses your existing .btn style! */
+    flex-shrink: 0; /* Prevents button from shrinking */
+    padding: 10px 15px;
+    font-size: 0.9rem;
+}
+/* --- YEH NAYA CSS ADD KAREIN --- */
+
+/* 1. Chat Header ko clickable banayein */
+.chat-header {
+    cursor: pointer;
+    /* User ko batata hai ki yeh clickable hai */
+}
+
+.ai-chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    
+    /* YEH EXPANDED STATE HAI (Default) */
+    max-height: 500px; 
+    
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Ubuntu', sans-serif;
+    
+    /* YEH SABSE ZAROORI HAI (Animation) */
+    transition: max-height 0.4s ease-in-out;
+}
+
+/* 2. YEH AAPKA COLLAPSED (BAND) STATE HAI */
+.ai-chat-container.chat-collapsed {
+    /* User ki request: default 50px height */
+    max-height: 50px; 
+}
+
+/* Jab chat band ho, toh messages aur input ko bhi chhupa dein */
+.ai-chat-container.chat-collapsed .chat-messages,
+.ai-chat-container.chat-collapsed .chat-input-area {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+
+/* Jab chat khuli ho, toh messages aur input ko waapis laayein */
+.chat-messages,
+.chat-input-area {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s linear;
+}
+
+/* --- YAHAN TAK ADD KAREIN --- */

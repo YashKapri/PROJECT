@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YashFitness - The best fitness gym in the town</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utils.css">
+</head>
+
+<body class='overflow-x-hidden'>
+    <div class="container mx-auto" id="top"> <header>
+          <nav class="flex justify-between">
+                <div class="logo font-bold flex items-center text-blue"><a href="./index.html">YashFitness</a></div> <ul class="navbar flex items-center">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#section_about">About</a></li>
+                    <li><a href="#section2">Services</a></li>
+                    <li><a href="#section_contact">Contact Us</a></li>
+                    <li><a href="account.html"><button class="btn">Account</button></a></li>
+                    <li><a href="#section_join"><button class="btn">Join Now</button></a></li>
+                </ul>
+            </nav>
+            <hr>
+        </header>
+        <main class="min-h-screen">
+            <section class="section1">
+                <div class="flex">
+                    <div class="topleft flex flex-col justify-center px-2">
+                        <div class=" text-center">
+                            <img class="dumbellimg" src="dumbell.png" alt="A hand gripping a dumbbell">
+                        </div>
+                        <h1 class="my-1 text-center">The best fitness Gym in the town is here</h1>
+                        <p class=" text-center">Pain itself, it is important to take it seriously. As a result, the body’s errors flee from pain, acquiring openness and all pains unless they are of his own choosing; they are asperities and dignified pleasures, but greater troubles bring pain back indeed! Inventive.</p>
+                            <p class="deal text-center">The deal ends in <span id="demo">Loading Timer...</span></p>
+                            <div class="buttons">
+                                <a href="#section_join" class="btn">Join now</a>
+                                <a href="#section_contact" class="btn">Contact Us</a>
+                            </div>
+                    </div>
+                    <div class="topright flex justify-center items-center">
+                        <img class="gymimg" src="images/gym.png" alt="A cartoon man exercising with dumbbells">
+                    </div>
+                </div>
+            </section>
+            <hr>
+
+            <section class="section_about" id="section_about">
+                <h1 class="text-center my-2">About YashFitness: Your Strength, Our Focus</h1>
+                <p class="my-2 text-center" style="max-width: 900px; margin: 20px auto;">
+                    Founded on the principle that fitness is a journey, not a destination, YashFitness is committed to providing a supportive, high-energy environment for everyone—from beginners to competitive athletes. We offer state-of-the-art equipment, certified personal trainers, and a diverse range of classes designed to meet every fitness goal. Our mission is to inspire and empower our community to live healthier, happier, and more active lives. Join us to find your strength and achieve the transformation you deserve.
+                </p>
+                <div class="boxes flex justify-center" style="margin-top: 40px;">
+                    <div class="box" style="min-width: 250px;">
+                        <h2>Our Vision</h2>
+                        <p>To be the most inspiring fitness community in the region, known for results and well-being.</p>
+                    </div>
+                    <div class="box" style="min-width: 250px;">
+                        <h2>Our Trainers</h2>
+                        <p>Highly certified and passionate professionals dedicated to personalizing your fitness plan.</p>
+                    </div>
+                </div>
+            </section>
+            <hr>
+
+            <section class="section2" id="section2">
+                <h1 class="text-center my-2">Pricing Plans: Choose Your Path to Fitness</h1>
+                <p class="my-2">Pain itself, it is important to take it seriously. As a result, the body’s errors flee from pain, acquiring openness and all pains unless they are of his own choosing; they are asperities and dignified pleasures, but greater troubles bring pain back indeed! Inventive.</p>
+                <div class="boxes flex justify-center">
+                    <div class="box">
+                        <h2>Free</h2>
+                        <ul>
+                            <li class="highlighted">₹0/month</li>
+                            <li>1 user included</li>
+                            <li>1 GB of storage</li>
+                            <li>Email support (Basic)</li>
+                            <li>Help center access</li>
+                            <li><button id="btnSignUpFree" class="btn">Sign Up Free</button></li>
+                        </ul>
+                    </div>
+                    <div class="box">
+                        <h2>Pro (Most Popular)</h2>
+                        <ul>
+                            <li class="highlighted">₹150/month</li>
+                            <li>3 users included</li>
+                            <li>10 GB of storage</li>
+                            <li>Priority Email support</li>
+                            <li>All help center access</li>
+                            <li><button class="btn payment-btn" data-plan="Pro" onclick="simulatePayment('Pro')">Buy Now</button></li>
+                        </ul>
+                    </div>
+                    <div class="box">
+                        <h2>Enterprise</h2>
+                        <ul>
+                            <li class="highlighted">₹500/month</li>
+                            <li>Unlimited users</li>
+                            <li>50 GB of storage</li>
+                            <li>24/7 Phone & Email support</li>
+                            <li>Dedicated account manager</li>
+                            <li><button class="btn payment-btn" data-plan="Enterprise" data-price="500" onclick="simulatePayment('Enterprise')">Buy Now</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-center" style="margin-top: 30px; font-style: italic;">
+                    <strong style="color: rgb(227 74 56);">Clean Payment System Note:</strong> A real-world payment system requires secure server-side integration with a payment gateway (like Stripe or PayPal). The "Buy Now" buttons currently use JavaScript to simulate the checkout process, but you would replace the `simulatePayment()` function with your actual payment gateway logic.
+                </p>
+            </section>
+            <hr>
+
+            <section class="section3">
+                <h1 class="text-center my-2">Compare Our Plans</h1>
+                <div class="container plantable">
+                    <table class="table text-center">
+                      <thead>
+                        <tr>
+                          <th>Features</th><th>Free</th>
+                          <th>Pro</th>
+                          <th>Enterprise</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="text-start">Public Access</th>
+                          <td><span class="check-icon">&#10003;</span></td>
+                          <td><span class="check-icon">&#10003;</span></td>
+                          <td><span class="check-icon">&#10003;</span></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Private Group Training</th>
+                          <td><span class="cross-icon">-</span></td>
+                          <td><span class="check-icon">&#10003;</span></td>
+                          <td><span class="check-icon">&#10003;</span></td>
+                        </tr>
+                      </tbody>
+
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="text-start">Personal Trainer Access</th>
+                          <td><span class="cross-icon">-</span></td>
+                          <td><span class="check-icon">&#10003;</span></td>
+                          <td><span class="check-icon">&#10003;</span></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Progress Sharing & Tracking</th>
+                          <td><span class="cross-icon">-</span></td>
+                          <td><span class="check-icon">&#10003;</span></td>
+                          <td><span class="check-icon">&#10003;</span></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Unlimited Classes</th>
+                          <td><span class="cross-icon">-</span></td>
+                          <td><span class="check-icon">&#10003;</span></td>
+                          <td><span class="check-icon">&#10003;</span></td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="text-start">Extra Security & Privacy</th>
+                          <td><span class="cross-icon">-</span></td>
+                          <td><span class="cross-icon">-</span></td>
+                          <td><span class="check-icon">&#10003;</span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                </div>
+            </section>
+            <hr>
+
+            <section class="section_contact flex justify-center flex-col items-center" id="section_contact" style="padding: 50px 0;">
+                <h1 class="text-center my-2">Get In Touch & Follow Us</h1>
+                <p class="my-2 text-center" style="max-width: 600px;">Have questions about our plans or services? Use the form below or connect with us on social media.</p>
+                
+                <div class="contact-links flex justify-center" style="gap: 30px; margin-bottom: 30px; font-size: 1.1rem; flex-wrap: wrap;">
+                    <a href="mailto:contact@yashfitness.com" target="_blank" style="color: #37110d; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='rgb(227 74 56)'" onmouseout="this.style.color='#37110d'">📧 Email: contact@yashfitness.com</a>
+                    <a href="https://instagram.com/yashfitness" target="_blank" style="color: #37110d; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='rgb(227 74 56)'" onmouseout="this.style.color='#37110d'">📸 Instagram: @yashfitness</a>
+                    <a href="https://linkedin.com/company/yashfitness" target="_blank" style="color: #37110d; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='rgb(227 74 56)'" onmouseout="this.style.color='#37110d'">💼 LinkedIn: YashFitness Co</a>
+                    <a href="https://wa.me/919999999999" target="_blank" style="color: #37110d; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='rgb(227 74 56)'" onmouseout="this.style.color='#37110d'">💬 WhatsApp: +91 99999 99999</a>
+                </div>
+
+                <form action="#" style="display: flex; flex-direction: column; width: 80%; max-width: 500px; gap: 15px;">
+                    <input type="text" placeholder="Your Name" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    <input type="email" placeholder="Your Email" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                    <textarea placeholder="Your Message" rows="4" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                    <button type="submit" class="btn" style="margin-top: 10px;">Send Message</button>
+                </form>
+            </section>
+            <hr>
+
+            <section class="section_join flex justify-center flex-col items-center" id="section_join" style="padding: 70px 0;">
+                <h1 class="text-center my-2">Join Our Family: Tell Us About Your Goals</h1>
+                <p class="my-2 text-center" style="max-width: 600px;">Fill out the form below so we can understand your fitness needs and help you choose the perfect plan!</p>
+                <form onsubmit="return handleJoinFormSubmit(event)" class="join-form" style="display: flex; flex-direction: column; width: 80%; max-width: 600px; gap: 20px; padding: 30px; border: 1px solid #eee; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);">
+                    <div class="flex" style="gap: 20px;">
+                        <input type="text" id="join_name" placeholder="Full Name" required style="flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+                        <input type="email" id="join_email" placeholder="Email Address" required style="flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+                    </div>
+                    <div class="flex" style="gap: 20px;">
+                        <input type="tel" id="join_phone" placeholder="Phone Number" required pattern="[0-9]{10,12}" title="Please enter a valid 10-12 digit phone number" style="flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+                        <select id="join_plan" required style="flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+                            <option value="">Preferred Plan*</option>
+                            <option value="Pro" data-price="150">Pro (₹150/month)</option>
+                            <option value="Enterprise" data-price="500">Enterprise (₹500/month)</option>
+                            <option value="Free" data-price="0">Free (₹0/month)</option>
+                        </select>
+                    </div>
+
+                    <h3 style="margin-top: 10px; color: rgb(227 74 56);">Your Fitness Details:</h3>
+                    <textarea id="join_level" placeholder="Briefly describe your current fitness level and experience." rows="3" style="padding: 12px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+                    <select id="join_goal" required style="padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+                        <option value="">Primary Fitness Goal*</option>
+                        <option value="weight_loss">Weight Loss</option>
+                        <option value="muscle_gain">Muscle Gain</option>
+                        <option value="endurance">Endurance/Stamina</option>
+                        <option value="general">General Health</option>
+                    </select>
+                    
+                    <button type="submit" class="btn" style="margin-top: 10px;">Submit Details & Get Started</button>
+                    <p style="text-align: center; font-size: 0.85rem; color: #555;">*A member of our team will contact you shortly to finalize your registration.</p>
+                </form>
+            </section>
+            <hr>
+        </main>
+        <footer>
+            Copyright &copy; YashFitness.com | All rights reserved
+        </footer>
+
+    </div>
+
+    <div id="paymentModal" class="payment-modal">
+        <div class="payment-modal-content">
+            <span class="close-btn" onclick="document.getElementById('paymentModal').style.display='none'">&times;</span>
+            <h2 id="modal_plan_name" class="text-center" style="color: rgb(227 74 56);">Secure Checkout for Pro Plan</h2>
+            <p class="text-center" style="margin-bottom: 20px;">Total Amount Due: <strong id="modal_price" style="font-size: 1.4rem;">₹150</strong></p>
+            
+            <div class="payment-options">
+                <div id="upi_qr_section" class="payment-section active-section">
+                    <h3 class="text-center">Scan & Pay (UPI)</h3>
+                    <div class="qr-code">[Image of Sample QR Code]</div>
+                    <p class="text-center" style="font-size: 0.9rem; color: #555;">UPI ID: yashfitness@upi</p>
+                    <p class="text-center my-1"><a href="upi://pay?pa=yashfitness@upi&pn=YashFitness&am=150" class="btn" style="background-color: #4CAF50;">Open UPI App</a></p>
+                </div>
+
+                <div id="card_section" class="payment-section">
+                    <h3 class="text-center">Credit / Debit Card</h3>
+                    <form onsubmit="alert('Card payment simulated! Payment successful.'); document.getElementById('paymentModal').style.display='none'; return false;">
+                        <input type="text" placeholder="Card Number" required pattern="\d{16}" title="16 digits" style="padding: 10px; margin-bottom: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
+                        <input type="text" placeholder="Card Holder Name" required style="padding: 10px; margin-bottom: 10px; width: 100%; border: 1px solid #ccc; border-radius: 5px;">
+                        <div class="flex" style="gap: 10px; margin-bottom: 20px;">
+                            <input type="text" placeholder="MM/YY" required pattern="\d{2}/\d{2}" title="MM/YY" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                            <input type="text" placeholder="CVV" required pattern="\d{3}" title="3 digits" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Pay Securely</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="payment-tabs flex justify-center">
+                <button class="tab-btn active-tab" onclick="showPaymentSection('upi_qr_section', this)">UPI / QR</button>
+                <button class="tab-btn" onclick="showPaymentSection('card_section', this)">Card</button>
+            </div>
+            
+        </div>
+    </div>
+    <div class="ai-chat-container">
+    <div class="chat-header">
+        <h3>AI Fitness Coach</h3>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+        <div class="message ai-message">Hi! I'm your AI coach. Ask me anything about fitness.</div>
+    </div>
+    <div class="chat-input-area">
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button class="btn" id="send-button">Send</button>
+        <button id="clearChatBtn" class="btn">Clear Chat</button>
+    </div>
+</div>
+
+    <script src="js/timer.js"></script>
+    <script src="ai-chat.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

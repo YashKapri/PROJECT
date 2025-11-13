@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - YashFitness</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utils.css">
+
+    <style>
+        /* This makes the login/signup forms look good */
+        .account-container {
+            display: flex;
+            justify-content: center;
+            /* We remove gap/padding, the inner boxes will handle it */
+            flex-wrap: wrap;
+        }
+        .form-box {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 50px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .form-box h2 {
+            text-align: center;
+            color: rgb(227 74 56);
+            margin-bottom: 20px;
+        }
+        .form-box form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .form-box input {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-box .message {
+            text-align: center;
+            min-height: 20px;
+            color: rgb(227 74 56);
+            font-weight: bold;
+        }
+        .status-box {
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* NEW: Styles for the signup prompt */
+        #signup-prompt {
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        #signup-prompt h3 {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        /* This creates the "New to YashFitness?" line */
+        #signup-prompt h3::before,
+        #signup-prompt h3::after {
+            content: "";
+            display: inline-block;
+            width: 100px;
+            height: 1px;
+            background-color: #ddd;
+            vertical-align: middle;
+            margin: 0 10px;
+        }
+        .secondary-btn {
+            background-color: rgb(227 74 56);
+            color: white;
+            border: 1px solid #ccc;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .secondary-btn:hover {
+            background-color: rgb(227 74 56);
+        }
+        .form-box .toggle-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .form-box .toggle-link a {
+            color: rgb(227 74 56);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .form-box .toggle-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body class='overflow-x-hidden'>
+    <div class="container mx-auto flex flex-col min-h-screen" id="top">
+        <header>
+            <nav class="flex justify-between">
+                <div class="logo font-bold flex items-center text-blue"><a href="./index.html">YashFitness</a></div>
+                <ul class="navbar flex items-center">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./index.html#section_about">About</a></li>
+                    <li><a href="./index.html#section2">Services</a></li>
+                    <li><a href="./index.html#section_contact">Contact Us</a></li>
+                    <li><a href="account.html"><button class="btn">Account</button></a></li>
+                    <li><a href="./index.html#section_join"><button class="btn">Join Now</button></a></li>
+                </ul>
+            </nav>
+            <hr>
+        </header>
+
+        <main class="flex-1">
+        <section>
+            
+<div id="me" class="status-box" style="font-size: 1.2rem; font-weight: bold;">
+                   <button id="logout-btn" class="btn" style="background-color: #555; margin-top: 0; display: none;">
+                        Logout
+                    </button>
+                </div>
+                
+                <div class="account-container">
+                    
+                    <div class="form-box" id="login-box">
+                        <h2>Login</h2>
+                        <form id="login-form">
+                            <label for="li-email">Email:</label>
+                            <input type="email" id="li-email" required>
+                            
+                            <label for="li-pass">Password:</label>
+                            <input type="password" id="li-pass" required>
+                            
+                            <button type="submit" class="btn">Login</button>
+                            <div id="login-msg" class="message"></div>
+                        </form>
+
+            
+                    </div>
+
+
+                    <div class="form-box" id="signup-box" style="display: none;">
+                        <h2>Create Account</h2>
+                        <form id="signup-form">
+                            <label for="su-email">Email:</label>
+                            <input type="email" id="su-email" required>
+                            
+                            <label for="su-pass">Password:</label>
+                            <input type="password" id="su-pass" required>
+                            
+                            <button type="submit" class="btn">Sign Up</button>
+                            <div id="signup-msg" class="message"></div>
+                        </form>
+                        <div class="toggle-link">
+                            Already have an account? <a id="show-login">Login here</a>
+                        </div>
+                    </div>
+
+                </div> <div id="signup-prompt">
+                    <h3>New to YashFitness?</h3>
+                    <button class="btn" id="show-signup">
+                        Create your new account
+                    </button>
+                </div>
+
+            </section>
+        </main>
+      <div>
+        <footer>
+            Copyright &copy; YashFitness.com | All rights reserved
+        </footer>
+
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loginBox = document.getElementById('login-box');
+            const signupBox = document.getElementById('signup-box');
+            const signupPrompt = document.getElementById('signup-prompt');
+
+            const showSignupBtn = document.getElementById('show-signup');
+            const showLoginLink = document.getElementById('show-login');
+
+            // When you click "Create your new account"
+            showSignupBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginBox.style.display = 'none';
+                signupPrompt.style.display = 'none';
+                signupBox.style.display = 'block';
+            });
+
+            // When you click "Login here"
+            showLoginLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                loginBox.style.display = 'block';
+                signupPrompt.style.display = 'block';
+                signupBox.style.display = 'none';
+            });
+        });
+
+        // after successful login/signup in client-side code:
+const params = new URLSearchParams(window.location.hash.split('?')[1] || window.location.search);
+const next = params.get('next') || '/platform.html';
+window.location.href = next;
+
+    </script>
+
+</body>
+</html>

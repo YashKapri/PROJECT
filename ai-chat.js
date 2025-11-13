@@ -8,6 +8,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const userInput = document.getElementById('user-input');
     const chatMessages = document.getElementById('chat-messages');
 
+// --- YEH NAYA CLICK LOGIC HAI (START) ---
+    const chatHeader = document.querySelector('.chat-header');
+    const chatContainer = document.querySelector('.ai-chat-container');
+
+    // Page load hote hi chat ko collapsed (band) rakhein
+    chatContainer.classList.add('chat-collapsed');
+
+    // Header par click listener lagayein
+    chatHeader.addEventListener('click', () => {
+        // 'chat-collapsed' class ko add ya remove karein
+        chatContainer.classList.toggle('chat-collapsed');
+    });
+    // --- NAYA CLICK LOGIC (END) ---
+
     // Add a click listener to the send button
     sendButton.addEventListener('click', sendMessage);
 
@@ -69,3 +83,17 @@ document.addEventListener('DOMContentLoaded', () => {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 });
+document.getElementById("clearChatBtn").addEventListener("click", async () => {
+  const res = await fetch('/chat/clear', {
+    method: 'POST',
+    credentials: 'same-origin'
+  });
+
+  const data = await res.json();
+  console.log("Chat cleared:", data);
+  
+  // UI chat messages ko bhi clear karo:
+  const chatBox = document.getElementById("chat-box"); // your message list container
+  if (chatBox) chatBox.innerHTML = ""; // remove all chat messages
+});
+// End of ai-chat.js file

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Payment — YashFitness</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial;margin:24px}
+    .card{max-width:720px;margin:20px auto;padding:20px;border-radius:8px;border:1px solid #eee;background:#fff}
+    .muted{color:#666}
+    .pay-btn{background:#e34b3b;color:#fff;padding:12px 18px;border:none;border-radius:6px;cursor:pointer}
+    .small{font-size:0.9rem;color:#444}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2 id="title">Payment</h2>
+    <p class="muted">Confirm your payment details and proceed.</p>
+
+    <div style="margin-top:16px">
+      <div><strong>Lead ID:</strong> <span id="leadId">—</span></div>
+      <div><strong>Plan:</strong> <span id="plan">—</span></div>
+      <div><strong>Amount:</strong> ₹<span id="amount">0</span></div>
+      <div class="small" style="margin-top:8px">If you close this page before completing payment, your lead will remain unconverted.</div>
+    </div>
+
+    <hr style="margin:18px 0">
+
+    <!-- Simple UPI/QR simulation area -->
+    <div id="paymentArea">
+      <p><strong>Pay by UPI / Scan QR</strong></p>
+      <div style="display:flex;gap:12px;align-items:center;">
+        <div style="width:140px;height:140px;border:1px dashed #ddd;display:flex;align-items:center;justify-content:center;">
+          <div class="small">QR</div>
+        </div>
+        <div>
+          <p class="small">UPI ID: <code>yash@upi</code></p>
+          <p class="small">Amount: ₹<span id="amount2">0</span></p>
+          <button id="simulatePay" class="pay-btn">I have paid (Simulate)</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="result" style="margin-top:14px"></div>
+  </div>
+
+<script>
+function qs(name) {
+  const p = new URLSearchParams(window.location.search);
+  return p.get(name);
+}
+
+const leadId = qs('leadId');
+const plan = qs('plan');
+const amount = qs('amount') || '0';
+
+document.getElementById('leadId').textContent = leadId;
+document.getElementById('plan').textContent = plan;
+document.getElementById('amount').textContent = amount;
+document.getElementById('amount2').textContent = amount;
+
+document.getElementById('simulatePay').addEventListener('click', async () => {
+  document.getElementById('result').textContent = 'Verifying payment...';
+  try {
+    const resp = await fetch('/payment-success', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'same-origin',
+      body: JSON.stringify({
+        leadId,
+        plan,
+        amount,
+        transactionId: 'simulated-' + Date.now(),
+      }),
+    });
+
+    const json = await resp.json();
+    if (!resp.ok) {
+      document.getElementById('result').textContent =
+        json.error || 'Payment verification failed.';
+      return;
+    }
+
+    document.getElementById('result').textContent =
+      json.message || 'Payment successful!';
+
+    // Wait a moment, then redirect to platform
+    setTimeout(() => {
+      window.location.href = json.redirect || '/platform.html';
+    }, 1000);
+  } catch (err) {
+    console.error(err);
+    document.getElementById('result').textContent = 'Network error.';
+  }
+});
+</script>
+
+</body>
+</html>
